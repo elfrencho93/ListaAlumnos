@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Alumnos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <img src="logo-robotics.jpg" alt="Logo">
+    <h1>Lista de Alumnos</h1>
+  </header>
+
+  <div class="container">
+    <input type="text" id="searchInput" placeholder="Buscar por nombre, edad...">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <button class="btnadd"><i class="fa-solid fa-user-plus"></i> Añadir</button>
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable('name')"><i class="fa-solid fa-user"></i> Nombre</th>
+                <th onclick="sortTable('age')">Edad</th>
+                <th onclick="sortTable('id')">DNI</th>
+                <th onclick="sortTable('email')">Correo Electrónico</th>
+                <th><i class="fa-solid fa-gear"></i> Acciones</th>
+            </tr>
+        </thead>
+        
+      <tbody></tbody>
+    </table>
+  </div>
+  <div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">
+      <i class="fas fa-times fa-lg"></i>
+    </span>
+    <form id="registrationForm">
+      <label for="name">Escribe el nombre:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="age">Escribe la edad:</label>
+      <input type="number" id="age" name="age" min="0" max="99" required>
+
+      <label for="id">Escribe el DNI:</label>
+      <input type="text" id="id" name="id" required>
+
+      <label for="email">Escribe el correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
+
+      <button type="button" class="btnenter" onclick="submitForm()">Entrar</button>
+    </form>
+  </div>
+  </div>
+  <script src="./js/main.js"></script>
+</body>
+</html>
