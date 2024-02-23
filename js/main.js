@@ -14,6 +14,12 @@ const students = [
     { "name": "Gloria Escocia", "age": 17, "id": "012", "email": "p0k3m0n35p4d4@example.com" },
     { "name": "Ivo Eggman Robotnik", "age": 30, "id": "013", "email": "p1nga5@example.com" },
     { "name": "Norberto Beavero", "age": 18, "id": "014", "email": "norb@example.com" },
+    { "name": "Wario Deutschland", "age": 29, "id": "015", "email": "soeinmist@example.com" },
+    { "name": "Marvin Logan", "age": 30, "id": "016", "email": "notojeffy@example.com" },
+    { "name": "Yuma Boi", "age": 39, "id": "017", "email": "theboi@example.com" },
+    { "name": "Vinegar Senior", "age": 31, "id": "018", "email": "dressing@example.com" },
+    { "name": "Lius Miami", "age": 35, "id": "019", "email": "hannibal@example.com" },
+    { "name": "Margarita Pizza", "age": 27, "id": "020", "email": "picsa@example.com" },
         
 ];
   
@@ -122,6 +128,7 @@ function openEditModal(index) {
   document.getElementById('age').value = student.age;
   document.getElementById('id').value = student.id;
   document.getElementById('email').value = student.email;
+  document.getElementById('address').value = student.address || "";
 
   openModal();
 }
@@ -132,6 +139,9 @@ function submitForm() {
   const age = parseInt(document.getElementById('age').value);
   const id = document.getElementById('id').value;
   const email = document.getElementById('email').value;
+  const address = document.getElementById('address').value || null;
+
+  const formData = { name, age, id, email, address };
 
   // Removing any existing error messages
   const existingErrorMessage = document.querySelector('.error-message');
@@ -153,8 +163,6 @@ function submitForm() {
     // Returning to stop the function execution
     return;
   }
-
-  const formData = { name, age, id, email };
 
   // Determining whether to add or edit a student
   if (editingIndex !== null) {
@@ -223,4 +231,37 @@ document.getElementById('email').addEventListener('keydown', function (event) {
   }
 });
 
- 
+ // Set initial style for the scroll to top button
+document.getElementById('scrollToTopBtn').style.display = 'none';
+
+// Variable to track whether the page is being loaded or reloaded
+let isPageLoaded = true;
+
+// Show/hide scroll to top button based on scroll position
+window.onscroll = function () {
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+  // Check if the page is being loaded or reloaded
+  if (isPageLoaded) {
+    // If the page is loaded or reloaded, set the flag to false
+    isPageLoaded = false;
+  } else {
+    // If not loaded or reloaded, handle scroll events
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      scrollToTopBtn.style.display = 'block';
+    } else {
+      scrollToTopBtn.style.display = 'none';
+    }
+  }
+};
+
+// Function to scroll back to the top
+function scrollToTop() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+}
+
+// Event listener for page load or reload
+window.onload = function () {
+  isPageLoaded = true;
+};

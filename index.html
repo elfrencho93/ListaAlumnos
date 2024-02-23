@@ -13,8 +13,8 @@
 </head>
 <body>
   <header>
-    <img src="logo-robotics.jpg" alt="Logo">
-    <h1>Lista de Alumnos</h1>
+    <img src="logo-robotics-transparent.png" alt="Logo">
+    <h1 class="title">Lista de Alumnos</h1>
   </header>
 
   <div class="container">
@@ -41,22 +41,79 @@
       <i class="fas fa-times fa-lg"></i>
     </span>
     <form id="registrationForm">
-      <label for="name">Escribe el nombre:</label>
-      <input type="text" id="name" name="name" required>
+      <div class="row">
+      <div class="column">
+        <h2><u>Alumno</u></h2>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+    
+        <label for="age">Edad:</label>
+        <input type="number" id="age" name="age" min="0" max="99" required>
+    
+        <label for="id">DNI:</label>
+        <input type="text" id="id" name="id" required>
+    
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
 
-      <label for="age">Escribe la edad:</label>
-      <input type="number" id="age" name="age" min="0" max="99" required>
+        <label for="phone">Número teléfono:</label>
+        <input type="text" id="phone" name="phone" maxlength="9">
 
-      <label for="id">Escribe el DNI:</label>
-      <input type="text" id="id" name="id" required>
+        <label for="address">Dirección:</label>
+        <input type="text" id="address" name="address">
 
-      <label for="email">Escribe el correo electrónico:</label>
-      <input type="email" id="email" name="email" required>
+        <label for="city">Ciudad:</label>
+        <input type="text" id="city" name="city">
+    
+        <label for="county">Municipal:</label>
+        <input type="text" id="county" name="county">
+    
+        <label for="pc">Código postal:</label>
+        <input type="text" id="pc" name="pc"maxlength="5" >
+    
+        <label for="region">Comunidad autónoma:</label>
+        <input type="text" id="region" name="region">
 
+      </div>
+    
+      <div class="column">
+        <h2><u>Padres</u></h2>
+        <label for="name">Nombre del padre:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="email">Correo electrónico del padre:</label>
+        <input type="email" id="email" name="email">
+    
+        <label for="phone">Número teléfono del padre:</label>
+        <input type="text" id="phone" name="phone" maxlength="9">
+
+        <label for="name">Nombre de la madre:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="email">Correo electrónico de la madre:</label>
+        <input type="email" id="email" name="email">
+    
+        <label for="phone">Número teléfono de la madre:</label>
+        <input type="text" id="phone" name="phone" maxlength="9">
+
+      </div>
+      </div>
+    
       <button type="button" class="btnenter" onclick="submitForm()">Entrar</button>
     </form>
   </div>
   </div>
+
+  <footer>
+    <p>&copy; Copyright 2024 <u>TBD</u>. All Rights Reserved<br>
+      Creado por <a href="https://github.com/elfrencho93" target="_blank">ElFrencho93</a></p>
+
+      <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">
+        <i class="fa-solid fa-arrow-up fa-lg"></i>
+      </button>
+      
+  </footer>
+
   <script src="./js/main.js"></script>
 </body>
 </html>

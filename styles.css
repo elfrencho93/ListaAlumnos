@@ -1,6 +1,5 @@
 /* Styling the body */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -9,11 +8,21 @@ body {
 
 /* Styling the header */
 header {
-    background-color: red;
+    background-image: linear-gradient(to bottom right, rgb(60, 60, 60) 40%, red);
     color: #fff;
+    border-bottom: 2px solid #000000;
     padding: 10px;
     text-align: center;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    user-select: none;
+}
+
+.title {
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
 }
 
 /* Logo within the header */
@@ -28,7 +37,8 @@ header img {
 /* Styling the container div */
 .container {
     max-width: 800px;
-    margin: 20px auto;
+    margin: 120px auto 50px;
+    padding: 15px;
 }
 
 /* Styling text input */
@@ -81,7 +91,6 @@ tr:nth-child(odd) {
     background-color: #ffffff;
 }
 
-
 /* Float right to the Añadir button */
 .btnadd {
     float: right;
@@ -126,18 +135,34 @@ tr:nth-child(odd) {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1; /* Set a higher z-index for the modal background */
 }
 
 /* Styling the modal content */
 .modal-content {
     background-color: #fff;
-    margin: 10% auto;
+    margin: 3% auto;
     padding: 15px;
-    width: 15%;
+    width: 40%; /* Adjust the width as needed */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Change flex-direction to column */
     align-items: center;
     position: relative;
+    z-index: 2; /* Set a higher z-index for the modal content */
+}
+
+/* Styling the row */
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Styling the column */
+.column {
+    width: 48%; /* Adjust the width as needed */
+    box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
 /* Close button in the modal */
@@ -148,13 +173,12 @@ tr:nth-child(odd) {
     cursor: pointer;
 }
 
-
 /* Registration form within the modal */
 #registrationForm {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 /* Labels within the registration form */
@@ -180,3 +204,43 @@ tr:nth-child(odd) {
 label {
     font-weight: bold;
 }
+
+/* Styling the footer */
+footer {
+    display: block;
+    text-align: center;
+    padding: 5px;
+    background-image: linear-gradient(to bottom left, red, rgb(60, 60, 60) 60%);
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 2px solid #000000;
+    user-select: none;
+}
+
+/* Styling link in the footer */
+a {
+    color:white;
+    text-decoration: none;
+}
+
+/* Back to top button */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0067b1;
+    color: #fff;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  #scrollToTopBtn:hover {
+    background-color: #4394ce;
+  }
